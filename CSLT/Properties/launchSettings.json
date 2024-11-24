@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CSLT": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
