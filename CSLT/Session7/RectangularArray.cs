@@ -172,6 +172,10 @@ namespace CSLT.Session7
             }
             return T;
         }
+        /// <summary>
+        /// Tìm đường chéo chính/đường chéo phụ của một mảng
+        /// </summary>
+        /// <param name="a"></param>
         static void induongcheo(int[,] a)
         {
             Console.Write("In duong cheo chinh hay phu <C/P____");

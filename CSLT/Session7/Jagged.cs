@@ -72,7 +72,6 @@ namespace CSLT.Session7
                     }
                     Console.WriteLine();
                 }
-
             }
             /// <summary>
             /// Tạo mảng tự động
@@ -86,10 +85,6 @@ namespace CSLT.Session7
                 {
                     Console.Write($"Nhap so cot cho dong {i}: "); int cols = int.Parse(Console.ReadLine());
                     a[i] = new int[cols];
-                    for (int j = 0; j < cols; j++)
-                    {
-                        a[i] = new int[cols];
-                    }
                     for (int j = 0; j < cols; j++)
                     {
                         //Console.Write($"a[{i}, {j} =");
