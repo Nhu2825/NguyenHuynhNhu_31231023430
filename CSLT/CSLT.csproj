@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Bonus\MultidimensionalArraysEx.cs" />
     <Compile Remove="Session1\FundementalEx.cs" />
     <Compile Remove="Session2\DataType.cs" />
     <Compile Remove="Session3\Operators.cs" />
@@ -25,10 +24,10 @@
     <Compile Remove="Session7\Note.cs" />
     <Compile Remove="Session7\RectangularArray.cs" />
     <Compile Remove="Session8\note.cs" />
+    <Compile Remove="Session8\String.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Bonus\MultidimensionalArraysEx.cs" />
     <None Include="Session1\FundementalEx.cs" />
     <None Include="Session2\DataType.cs" />
     <None Include="Session3\Operators.cs" />
@@ -43,6 +42,7 @@
     <None Include="Session7\Note.cs" />
     <None Include="Session7\RectangularArray.cs" />
     <None Include="Session8\note.cs" />
+    <None Include="Session8\String.cs" />
   </ItemGroup>
 
   <ItemGroup>
