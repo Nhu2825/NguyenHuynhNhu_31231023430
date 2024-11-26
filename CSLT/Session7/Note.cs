@@ -194,11 +194,12 @@ namespace CSLT.Session7
             {
                 Console.Clear();
                 Console.WriteLine("=== MENU ===");
-                Console.WriteLine("1. Tùy chọn 1");
-                Console.WriteLine("2. Tùy chọn 2");
-                Console.WriteLine("3. Tùy chọn 3");
-                Console.WriteLine("0. Thoát");
-                Console.Write("Nhập lựa chọn của bạn: ");
+                Console.WriteLine("1. Nhap thong tin nhan vien.");
+                Console.WriteLine("2. In tat ca thong tin.");
+                Console.WriteLine("3. In thong tin biet ID.");
+                Console.WriteLine("4. In thong tin nguoi nhieu Task nhat.");
+                Console.WriteLine("0. Exist");
+                Console.Write("Ban muon thuc hien tac vu nao?  ");
                 do
                 {
                     bool check = int.TryParse(Console.ReadLine(), out choice);
@@ -213,7 +214,7 @@ namespace CSLT.Session7
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Bạn đã chọn Tùy chọn 1.");
+                        Console.WriteLine("Nhap thong tin nhan vien.");
                         break;
                     case 2:
                         Console.WriteLine("Bạn đã chọn Tùy chọn 2.");
@@ -322,14 +323,20 @@ namespace CSLT.Session7
         }
         public static void NhieuTaskNhat(string[][][]groups)
         {
-            foreach (string[][] G in groups)
+            int max;
+            string[] best= null; 
+            for (int i=0; i< groups.Length;i++)
             {
-                foreach (string[] mem in G)
+                max = groups[i][0].Length - 1;
+                for (int j=0; j< groups[i].Length; j++)
                 {
-                    Console.WriteLine($"ID: {mem[0]}, Name: {mem[1]}, Completed task: {mem.Length - 1}. ");                   
-                }
+                    if (max < groups[i][j].Length)
+                    { 
+                        max = groups[i][j].Length;
+                    }    
+                }    
             }
+            Console.WriteLine();
         }
-
     }
 }

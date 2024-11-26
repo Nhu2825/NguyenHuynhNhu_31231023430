@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bonus\MultidimensionalArraysEx.cs" />
     <Compile Remove="Session1\FundementalEx.cs" />
     <Compile Remove="Session2\DataType.cs" />
     <Compile Remove="Session3\Operators.cs" />
@@ -21,10 +22,13 @@
     <Compile Remove="Session6\SingleDimensionArrays.cs" />
     <Compile Remove="Session7\Algorithmson.cs" />
     <Compile Remove="Session7\Jagged.cs" />
+    <Compile Remove="Session7\Note.cs" />
     <Compile Remove="Session7\RectangularArray.cs" />
+    <Compile Remove="Session8\note.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Bonus\MultidimensionalArraysEx.cs" />
     <None Include="Session1\FundementalEx.cs" />
     <None Include="Session2\DataType.cs" />
     <None Include="Session3\Operators.cs" />
@@ -36,7 +40,9 @@
     <None Include="Session6\SingleDimensionArrays.cs" />
     <None Include="Session7\Algorithmson.cs" />
     <None Include="Session7\Jagged.cs" />
+    <None Include="Session7\Note.cs" />
     <None Include="Session7\RectangularArray.cs" />
+    <None Include="Session8\note.cs" />
   </ItemGroup>
 
   <ItemGroup>
