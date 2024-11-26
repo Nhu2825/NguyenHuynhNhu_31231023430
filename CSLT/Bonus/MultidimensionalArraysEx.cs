@@ -11,6 +11,10 @@ namespace CSLT.Bonus
     {
         public static void Main()
         {
+            Console.Write("Nhap chuoi: "); string s = Console.ReadLine();
+            Console.Write("Nhap sub: "); string sub = Console.ReadLine();
+            //checkSub(s, sub);
+            Console.WriteLine($"'{sub}' lap lai {countSub(s,sub)} lan trong chuoi.");
             Console.ReadKey();
         }
         /// <summary>
@@ -26,6 +30,50 @@ namespace CSLT.Bonus
                     Console.WriteLine($"element - [{i},{j}]: "); Console.ReadLine();
                 }
             }
+        }
+        static int countSub(string s, string sub)
+        {            
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == sub[0])
+                {
+                    int ok = 0;
+                    for (int j = 1; j < sub.Length; j++)
+                    {
+                        if (s[i+j] == sub[j])
+                        {
+                            ok++;
+                        }    
+                    }
+                    if (ok==sub.Length-1) count++;
+                }
+            }
+            return count;
+        }
+        static void checkSub(string s, string sub)
+        {
+            //if (s.Contains(sub)) Console.WriteLine($"Chuoi co chua {sub}.");
+            //else
+            //{
+            //    Console.WriteLine($"Chuoi khong chua {sub}.");
+            //}
+            bool check = false;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[0] != sub[0])
+                { break; }
+                else if (s[0] == sub[0])
+                {
+                    for (int j = 1; j < sub.Length; j++)
+                    {
+                        if (s[j] != sub[j]) break;
+                    }
+                    check = true;
+                }
+            }
+            if (check) Console.WriteLine($"Ton tai '{sub}' trong chuoi.");
+            else Console.WriteLine($"Trong chuoi khong co '{sub}'.");
         }
     }
 }

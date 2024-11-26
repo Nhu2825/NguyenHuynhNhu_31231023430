@@ -10,7 +10,7 @@ namespace CSLT.Session4
     {
         public static void Main()
         {
-            
+            bai2_4();
             Console.ReadKey();
         }
         /// <summary>

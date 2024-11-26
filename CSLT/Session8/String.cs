@@ -12,13 +12,16 @@ namespace CSLT.Session8
     {
         public static void Main()
         {
-            Console.Write("Nhap chuoi gi do: "); string s = Console.ReadLine();
+            Console.Write("Nhap chuoi gi do: "); string s = Console.ReadLine(); //nhập 
+            Console.WriteLine(s); //in
+            Console.WriteLine($"Chuoi co {countwords(s)} tu.");
             InNguoc(s);
             Console.Write("Nhap noi dung can tim: "); string sub = Console.ReadLine();
             if (s.IndexOf(sub)<0) Console.WriteLine($"'{sub}' khong ton tai."); 
             else Console.WriteLine($"Trong chuoi co '{sub}'.");
-            checkSub(s,sub);          
-            Console.Write($"Chuoi da chen: "+ChenVaoDau(s,sub)+ Environment.NewLine);
+            checkSub(s,sub);     
+            Console.WriteLine($"Chuoi co {countSub(s,sub)} chuoi "{ sub}".");
+            Console.WriteLine($"Chuoi da chen: "+ChenVaoDau(s,sub)+ Environment.NewLine);
             char nhap;
             do
             {
@@ -31,13 +34,11 @@ namespace CSLT.Session8
                 else
                     break;
             }
-            while (true);
+            while (true);//yêu cầu nhập đúng kiểu
             checkAlphanbet(nhap);
+            demChu_So_Symbol(s);
+            countVowelCount(s);
             Console.ReadKey();
-        }
-        public static void In(string s)
-        {
-            Console.WriteLine(s);
         }
         /// <summary>
         ///  to find the length of a string without using a library function
@@ -53,6 +54,10 @@ namespace CSLT.Session8
             }
             return count;
         }
+        /// <summary>
+        /// in rời từng ký tự
+        /// </summary>
+        /// <param name="s"></param>
         static void InKyTuDaTach(string s)
         {
             foreach (char c in s)
@@ -68,7 +73,7 @@ namespace CSLT.Session8
         {
             for (int i = s.Length; i > 0; i--)
             {
-                Console.WriteLine(s[i - 1]);
+                Console.Write(s[i - 1]);
             }
         }
         /// <summary>
