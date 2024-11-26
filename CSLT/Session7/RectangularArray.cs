@@ -55,8 +55,13 @@ namespace CSLT.Session7
             xuatmang(chuyenvi(a));
             Console.WriteLine("In duong cheo chinh/phu");
             induongcheo(a);
-
         }
+        /// <summary>
+        /// Tạo mảng có phần tử được tạo ngẫu nhiên tự động
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="rows"></param>
+        /// <param name="columns"></param>
         public static void nhapmangtudong(int[,] a, int rows, int columns)
         {
             Random rand = new Random();
@@ -68,6 +73,10 @@ namespace CSLT.Session7
                 }
             }
         }
+        /// <summary>
+        /// In mảng 
+        /// </summary>
+        /// <param name="a"></param>
         static void xuatmang(int[,] a)
         {
             for (int i = 0; i < a.GetLength(0); i++)
@@ -79,9 +88,13 @@ namespace CSLT.Session7
                 Console.WriteLine();
             }
         }
+       /// <summary>
+       /// In 1 dòng bất kỳ theo yêu cầu
+       /// </summary>
+       /// <param name="a"></param>
+       /// <param name="i"></param>
         static void indong(int[,] a, int i)
         {
-
             Console.WriteLine($"Dong {i} la:  ");
             for (int j = 0; j < a.GetLength(1); j++)
             {
@@ -89,9 +102,13 @@ namespace CSLT.Session7
             }
             Console.WriteLine();
         }
+        /// <summary>
+        /// In cột bất kỳ theo yêu cầu
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="i"></param>
         static void incot(int[,] a, int i)
         {
-
             Console.WriteLine($"Dong {i} la:  ");
             for (int j = 0; j < a.GetLength(0); j++)
             {
@@ -117,10 +134,8 @@ namespace CSLT.Session7
             int max = 0;
             for (int j = 0; j < a.GetLength(0); j++)
             {
-                {
-                    if (a[i, j] > max)
-                        max = a[i, j];
-                }
+                if (a[i, j] > max)
+                    max = a[i, j];               
             }
             return max;
         }
@@ -128,11 +143,9 @@ namespace CSLT.Session7
         {
             int min = 0;
             for (int j = 0; j < a.GetLength(0); j++)
-            {
-                {
-                    if (a[i, j] < min)
-                        min = a[i, j];
-                }
+            {                
+                if (a[i, j] < min)
+                    min = a[i, j];                
             }
             return min;
         }
@@ -141,20 +154,16 @@ namespace CSLT.Session7
             int max = 0;
             for (int i = 0; i < a.GetLength(0); i++)
             {
-
                 if (a[i, j] > max)
                     max = a[i, j];
-
             }
             return max;
         }
-
         static int mincot(int[,] a, int j)
         {
             int min = 0;
             for (int i = 0; i < a.GetLength(0); i++)
             {
-
                 if (a[i, j] < min)
                     min = a[i, j];
             }
@@ -178,23 +187,24 @@ namespace CSLT.Session7
         /// <param name="a"></param>
         static void induongcheo(int[,] a)
         {
-            Console.Write("In duong cheo chinh hay phu <C/P____");
-            string opt = Console.ReadLine();
-            if (opt.ToLower().Equals("c"))
+            if (a.GetLength(0) == a.GetLength(1))
             {
-                if (a.GetLength(0) == a.GetLength(1))
+                Console.Write("In duong cheo chinh hay phu <C/P____");
+                string opt = Console.ReadLine();
+                do
+                {
+                    if (opt != string.Empty&&"cp".Contains(opt.ToLower())) break;
+                    else Console.WriteLine("Hay nhap yeu cau.");
+                } while (true);
+                if (opt.ToLower().Equals("c"))
                 {
                     for (int j = 0; j < a.GetLength(0); j++)
                     {
                         Console.Write(a[j, j] + "\t");
                     }
                 }
-                else Console.WriteLine("Day khong phai ma tran vuong");
-            }
-            if (opt.ToLower().Equals("p"))
-            {
-                if (a.GetLength(0) == a.GetLength(1))
-                {
+                else if (opt.ToLower().Equals("p"))
+                {                    
                     for (int j = 0; j < a.GetLength(0); j++)
                     {
                         for (int k = 0; k < a.GetLength(1); k++)
@@ -202,10 +212,10 @@ namespace CSLT.Session7
                             if (k == a.GetLength(0) - 1 - j)
                                 Console.Write($"{a[j, k]} \t");
                         }
-                    }
+                    }                    
                 }
-                else Console.WriteLine("Day khong phai ma tran vuong");
             }
+            else Console.WriteLine("Day khong phai ma tran vuong");
         }
     }
 }

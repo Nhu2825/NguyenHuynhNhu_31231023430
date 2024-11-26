@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ namespace CSLT.Session6
     {
         public static void Main()
         {
-
-            ex_03();
+            simpleEx();
+            //ex_03();
             Console.ReadKey();
         }
         /// <summary>
@@ -309,6 +310,37 @@ namespace CSLT.Session6
                     return i;
             }
             return -1;
+        }
+        /// <summary>
+        /// Tạo mảng có N phần tử với N được nhập bởi người dùng <br/>
+        /// 1. Nhập các phần tử vào mảng <br/>
+        /// 2. In mảng <br/>
+        /// 3. Viết hàm con tăng mỗi phần tử lên 2 <br/>
+        /// 4. In lại lần nữa
+        /// </summary>
+        public static void simpleEx()
+        {
+            int n;
+            do
+            {
+                if (int.TryParse(Console.ReadLine(), out n) && n>0)
+                { break; }
+                else { Console.WriteLine("Vui long nhap mot so nguyen duong."); }
+            }
+            while (true);
+            int[]a=new int[n];
+            nhapthucong(a, n);
+            Console.WriteLine("Mang vua tao: "); inmang(a);
+            Console.WriteLine("Mang duoc tang them 2: "); inmang(tang2(a));
+        }
+
+        private static int[] tang2(int[] a)
+        {
+            for (int i = 0;i < a.Length; ++i)
+            {
+                a[i] += 2;
+            }      
+            return a;
         }
     }
 }

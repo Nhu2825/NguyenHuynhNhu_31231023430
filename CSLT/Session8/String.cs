@@ -17,11 +17,12 @@ namespace CSLT.Session8
             Console.WriteLine($"Chuoi co {countwords(s)} tu.");
             InNguoc(s);
             Console.Write("Nhap noi dung can tim: "); string sub = Console.ReadLine();
-            if (s.IndexOf(sub)<0) Console.WriteLine($"'{sub}' khong ton tai."); 
+            if (s.IndexOf(sub) < 0) Console.WriteLine($"'{sub}' khong ton tai.");
             else Console.WriteLine($"Trong chuoi co '{sub}'.");
-            checkSub(s,sub);     
-            Console.WriteLine($"Chuoi co {countSub(s,sub)} chuoi "{ sub}".");
-            Console.WriteLine($"Chuoi da chen: "+ChenVaoDau(s,sub)+ Environment.NewLine);
+            checkSub(s, sub);
+            Console.WriteLine($"Chuoi co {countSub(s, sub)} chuoi '{sub}'.");
+            Console.Write("Nhap chuoi can chen"); string chen = Console.ReadLine();
+            Console.WriteLine($"Chuoi da chen: " + ChenVaoDau(s, chen) + Environment.NewLine);
             char nhap;
             do
             {
@@ -75,6 +76,7 @@ namespace CSLT.Session8
             {
                 Console.Write(s[i - 1]);
             }
+            Console.WriteLine();
         }
         /// <summary>
         ///  to count the total number of words in a string.
@@ -124,7 +126,7 @@ namespace CSLT.Session8
             int symbol = 0;
             for (int i=0; i<s.Length; i++)
             {
-                if ((int)s[i] <= 90 && (int)s[i] >= 65 || (int)s[i] >= 97 && (int)s[i] <= 122)
+                if ((int)s.ToUpper()[i] <= 90 && (int)s.ToUpper()[i] >= 65 )
                 {
                     chu++;
                 }
@@ -146,14 +148,14 @@ namespace CSLT.Session8
             int consonants = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if ((int)s[i] <= 90 && (int)s[i] >= 65 || (int)s[i] >= 97 && (int)s[i] <= 122)
+                if ((int)s.ToUpper()[i] <= 90 && (int)s.ToUpper()[i] >= 65)
                 {
                     if ("euoaiEUOAI".Contains(s[i]))
                     { vowel++; }  
                     else { consonants++; }
                 }
             }
-            Console.WriteLine($"Chuoi co {vowel} nguyen am va {consonants} phu am.");
+            Console.WriteLine($"Chuoi co {vowel} chu la nguyen am va {consonants} chu la phu am.");
         }
         /// <summary>
         ///  to find the number of times a substring appears in a given string
@@ -171,6 +173,26 @@ namespace CSLT.Session8
                 s = s.Substring(pos + sub.Length);
                 count++;
             }    
+            return count;
+        }
+        static int countSub2(string s, string sub)
+        {
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == sub[0])
+                {
+                    int ok = 0;
+                    for (int j = 1; j < sub.Length; j++)
+                    {
+                        if (s[i + j] == sub[j])
+                        {
+                            ok++;
+                        }
+                    }
+                    if (ok == sub.Length - 1) count++;
+                }
+            }
             return count;
         }
         /// <summary>
@@ -204,17 +226,19 @@ namespace CSLT.Session8
             bool check = false;
             for (int i = 0; i < s.Length; i++)
             {
-                if (s[0] != sub[0])
-                { break; }  
-                else if (s[0] == sub[0])
+                if (s[i] == sub[0])
                 {
+                    int ok = 0;
                     for (int j = 1; j < sub.Length; j++)
                     {
-                        if (s[j]!=sub[j]) break;
+                        if (s[i + j] == sub[j])
+                        {
+                            ok++;
+                        }
                     }
-                    check = true;
-                }    
-            }
+                    if (ok == sub.Length - 1) check=true;
+                }
+            }               
             if (check) Console.WriteLine($"Ton tai '{sub}' trong chuoi.");
             else Console.WriteLine($"Trong chuoi khong co '{sub}'.");
         }
@@ -227,7 +251,7 @@ namespace CSLT.Session8
         static string ChenVaoDau(string s, string sub)
         {
             string s1 = s;
-            s = sub+s1;
+            s = sub+" "+s1;
             return s;
         }
     }

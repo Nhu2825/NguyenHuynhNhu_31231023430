@@ -12,6 +12,7 @@ namespace CSLT.Session8
         {
             Console.WriteLine("nhap gi do: ");
             string s = Console.ReadLine();
+           
             Console.WriteLine(countwords(s));
         }
         public static void strings()

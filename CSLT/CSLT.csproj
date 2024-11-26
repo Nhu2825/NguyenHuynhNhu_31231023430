@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bonus\MultidimensionalArraysEx.cs" />
     <Compile Remove="Session1\FundementalEx.cs" />
     <Compile Remove="Session2\DataType.cs" />
     <Compile Remove="Session3\Operators.cs" />
@@ -28,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Bonus\MultidimensionalArraysEx.cs" />
     <None Include="Session1\FundementalEx.cs" />
     <None Include="Session2\DataType.cs" />
     <None Include="Session3\Operators.cs" />
