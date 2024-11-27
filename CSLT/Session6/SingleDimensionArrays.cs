@@ -333,8 +333,7 @@ namespace CSLT.Session6
             Console.WriteLine("Mang vua tao: "); inmang(a);
             Console.WriteLine("Mang duoc tang them 2: "); inmang(tang2(a));
         }
-
-        private static int[] tang2(int[] a)
+        static int[] tang2(int[] a)
         {
             for (int i = 0;i < a.Length; ++i)
             {
