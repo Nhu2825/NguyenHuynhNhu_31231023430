@@ -17,28 +17,29 @@ namespace CSLT.Session8
             Console.WriteLine($"Chuoi co {countwords(s)} tu.");
             InNguoc(s);
             Console.Write("Nhap noi dung can tim: "); string sub = Console.ReadLine();
-            if (s.IndexOf(sub) < 0) Console.WriteLine($"'{sub}' khong ton tai.");
-            else Console.WriteLine($"Trong chuoi co '{sub}'.");
-            checkSub(s, sub);
-            Console.WriteLine($"Chuoi co {countSub(s, sub)} chuoi '{sub}'.");
-            Console.Write("Nhap chuoi can chen"); string chen = Console.ReadLine();
-            Console.WriteLine($"Chuoi da chen: " + ChenVaoDau(s, chen) + Environment.NewLine);
-            char nhap;
-            do
-            {
-                Console.Write("Nhap mot ky tu duy nhat: ");
-                bool check = char.TryParse(Console.ReadLine(), out nhap);
-                if (!check)
-                {
-                    Console.WriteLine("Vui long nhap cho dung!");
-                }
-                else
-                    break;
-            }
-            while (true);//yêu cầu nhập đúng kiểu
-            checkAlphanbet(nhap);
-            demChu_So_Symbol(s);
-            countVowelCount(s);
+            //if (s.IndexOf(sub) < 0) Console.WriteLine($"'{sub}' khong ton tai.");
+            //else Console.WriteLine($"Trong chuoi co '{sub}'.");
+            //checkSub(s, sub);
+            //Console.WriteLine($"Chuoi co {countSub(s, sub)} chuoi '{sub}'.");
+            //Console.Write("Nhap chuoi can chen"); string chen = Console.ReadLine();
+            //Console.WriteLine($"Chuoi da chen: " + ChenVaoDau(s, chen) + Environment.NewLine);
+            //char nhap;
+            //do
+            //{
+            //    Console.Write("Nhap mot ky tu duy nhat: ");
+            //    bool check = char.TryParse(Console.ReadLine(), out nhap);
+            //    if (!check)
+            //    {
+            //        Console.WriteLine("Vui long nhap cho dung!");
+            //    }
+            //    else
+            //        break;
+            //}
+            //while (true);//yêu cầu nhập đúng kiểu
+            //checkAlphanbet(nhap);
+            //demChu_So_Symbol(s);
+            //countVowelCount(s);
+            Console.WriteLine(countSub(s,sub));
             Console.ReadKey();
         }
         /// <summary>

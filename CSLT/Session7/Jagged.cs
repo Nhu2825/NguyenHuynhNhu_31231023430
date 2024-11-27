@@ -189,56 +189,94 @@ namespace CSLT.Session7
             /// Hint: create a jagged array to store these members in the form [id,[name, tasks]].
             /// </summary>
             public static void ExVip()
-            {
-
-                // Define a jagged array for 3 groups
+            { // Define a jagged array for 3 groups
                 string[][][] groups = new string[3][][];
                 {
-                    // Group 1
-                    groups[0] = new string[][]
+                    // Group 1 with 5 mem
+                    groups[0] = new string[5][];
                     {
-
+                        groups[0][0] = new string[] { "G101", "hhhhj", "task1", "task2" };
+                        groups[0][1] = new string[] { "G102", "jhkh", "task1", "task2", "taskt3" };
+                        groups[0][2] = new string[] { "G103", "jhkh", "task1", "task2", "taskt3", "taskX" };
+                        groups[0][3] = new string[] { "G104", "jhkh", "task1", "task2", "taskt3" };
+                        groups[0][4] = new string[] { "G105", "jhkh", "task1", "task2", "taskt3" };
                     };
-
-                    // Group 2
-                    groups[0] = new string[][]
+                    // Group 2 with 3 mem
+                    groups[1] = new string[3][];
                     {
-
+                        groups[1][0] = new string[] { "G201", "hhhhj", "task1" };
+                        groups[1][1] = new string[] { "G202", "jhkh", "task1", "task2", "taskt3" };
+                        groups[1][2] = new string[] { "G203", "task1", "task2", "taskt3", "taskX" };
                     };
-                    // Group 3
-                    groups[0] = new string[][]
-                        {
-
-                        };
+                    // Group 3 with 6 mem
+                    groups[2] = new string[6][];
+                    {
+                        groups[2][0] = new string[] { "G301", "hhhhj", "task1", "task2" };
+                        groups[2][1] = new string[] { "G302", "jhkh", "task1", "task2", "taskt3" };
+                        groups[2][2] = new string[] { "G303", "jhkh", "task1", "task2", "taskt3", "taskX" };
+                        groups[2][3] = new string[] { "G304", "jhkh", "task1", "task2", "taskt3" };
+                        groups[2][4] = new string[] { "G305", "jhkh", "task1", "task2", "taskt3" };
+                        groups[2][5] = new string[] { "G306", "jhkh", "task1", "task2", "taskt3", "taskA", "taskB", "TaskC" };
+                    };
                 }
-                // Display the data
-                for (int i = 0; i < groups.Length; i++)
-                {
-
-                    Console.WriteLine();
-                }
-                menu();
-
+                return groups;
             }
+
+            /// <summary>
+            /// Menu để chọn tác vụ
+            /// </summary>
             static void menu()
             {
-                int choice = int.Parse(Console.ReadLine());
-                switch (choice)
+                int choice;
+                do
                 {
-                    case 1:
-                        Console.WriteLine("Bạn đã chọn số 1.");
-                        break;
-                    case 2:
-                        Console.WriteLine("Bạn đã chọn số 2.");
-                        break;
-                    case 3:
-                        Console.WriteLine("Bạn đã chọn số 3.");
-                        break;
-                    default:
-                        Console.WriteLine("Lựa chọn không hợp lệ.");
-                        break;
-                }
+                    Console.Clear();
+                    Console.WriteLine("=== MENU ===");
+                    Console.WriteLine("1. Nhap thong tin nhan vien.");
+                    Console.WriteLine("2. In tat ca thong tin.");
+                    Console.WriteLine("3. In thong tin biet ID.");
+                    Console.WriteLine("4. In thong tin nguoi nhieu Task nhat.");
+                    Console.WriteLine("0. Exist");
+                    Console.Write("Ban muon thuc hien tac vu nao?  ");
+                    do
+                    {
+                        bool check = int.TryParse(Console.ReadLine(), out choice);
+                        if (!check)
+                        {
+                            Console.WriteLine("Vui long nhap mot so nguyen");
+                        }
+                        else
+                            break;
+                    }
+                    while (true);
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.WriteLine("Nhap thong tin nhan vien.");
+                            break;
+                        case 2:
+                            Console.WriteLine("Bạn đã chọn Tùy chọn 2.");
+                            break;
+                        case 3:
+                            Console.WriteLine("Bạn đã chọn Tùy chọn 3.");
+                            break;
+                        case 0:
+                            Console.WriteLine("Thoát chương trình...");
+                            break;
+                        default:
+                            Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+                            break;
+                    }
+
+                    if (choice != 0)
+                    {
+                        Console.WriteLine("\nNhấn phím bất kỳ để tiếp tục...");
+                        Console.ReadKey();
+                    }
+
+                } while (choice != 0); // Lặp lại nếu chưa chọn "0"
             }
+
         }
     }
 

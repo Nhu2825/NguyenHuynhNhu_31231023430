@@ -238,11 +238,11 @@ namespace CSLT.Session6
             string[] sentence = SentenceToArray(nhap, ' ');
             if (LinearSearch(sentence, tim) != -1)
             {
-                Console.WriteLine($"Trong cau co tu {tim}, la tu thu {LinearSearch(sentence, tim) + 1} trong cau."); ;
+                Console.WriteLine($"Trong cau co tu '{tim}', la tu thu {LinearSearch(sentence, tim) + 1} trong cau."); ;
             }
             else
             {
-                Console.WriteLine($"Trong cau khong co tu {tim}.");
+                Console.WriteLine($"Trong cau khong co tu '{tim}'.");
             }
         }
         public static int[] BubbleSort(int[] a)
