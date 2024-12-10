@@ -26,6 +26,10 @@
     <Compile Remove="Session7\Note.cs" />
     <Compile Remove="Session7\RectangularArray.cs" />
     <Compile Remove="Session8\note.cs" />
+    <Compile Remove="Session8\String.cs" />
+    <Compile Remove="Session9\instruction.cs" />
+    <Compile Remove="Session9\InstructionWorkwithFile.cs" />
+    <Compile Remove="Session9\Note.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +49,10 @@
     <None Include="Session7\Note.cs" />
     <None Include="Session7\RectangularArray.cs" />
     <None Include="Session8\note.cs" />
+    <None Include="Session8\String.cs" />
+    <None Include="Session9\instruction.cs" />
+    <None Include="Session9\InstructionWorkwithFile.cs" />
+    <None Include="Session9\Note.cs" />
   </ItemGroup>
 
   <ItemGroup>
