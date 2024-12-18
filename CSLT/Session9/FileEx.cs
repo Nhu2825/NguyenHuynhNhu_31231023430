@@ -18,7 +18,10 @@ namespace CSLT.Session9
         public static void q1(string path)
         {
 			FileStream fs = new FileStream(path, FileMode.Create);
-	    }
+            string blankFilePath = "blank.txt";
+            File.Create(blankFilePath).Close();
+            Console.WriteLine("Blank file created.");
+        }
         /// <summary>
         /// 2. to remove a file from the disk.
         /// </summary>
@@ -57,16 +60,20 @@ namespace CSLT.Session9
         /// <summary>
         /// 5. to create a file and write an array of strings to the file.
         /// </summary>
-        public static void q5()
+        public static void q5(string path)
         {
-
+            FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Write);
+            StreamWriter sth = new StreamWriter(fs);
+            string[] st = { "Eh", "Thi on khong?"};
+            sth.WriteLine(st); sth.Close();
         }
         /// <summary>
         /// 6. to append some text to an existing file.
         /// </summary>
-        public static void q6()
+        public static void q6(string path)
         {
-
+            FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Write);
+            File.AppendAllLines($"{path}", "Another love");
         }
         /// <summary>
         /// 7. to create and copy the file to another name and display the content.
