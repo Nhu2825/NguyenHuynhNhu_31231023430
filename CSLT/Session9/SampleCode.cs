@@ -3,14 +3,14 @@ using System.IO;
 
 namespace CSLT.Session9
 {
-    internal class FileEx
+    internal class SampleCode
     {
         public static void Main()
         {
             string path = @"D:\Test.txt";
             //q2(path);
             //q1(path);
-            q4(path);
+            //q4(path);
         }
         /// <summary>
         /// 1. To create a blank file on the disk.
@@ -73,35 +73,44 @@ namespace CSLT.Session9
         public static void q6(string path)
         {
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Write);
-            File.AppendAllLines($"{path}", "Another love");
+            File.AppendAllText(path, "\nAppended text.");
         }
         /// <summary>
         /// 7. to create and copy the file to another name and display the content.
         /// </summary>
-        public static void q7()
+        public static void q7(string path)
         {
-
+            string copypath = @"D:\copyfile.txt";
+            File.Copy(path, copypath, true);
+            Console.WriteLine("Content of the copied file: " + File.ReadAllText(copypath));
         }
         /// <summary>
         /// 8. create a file and move it into the same directory with another name.
         /// </summary>
         public static void q8()
         {
-
+            string path = "forQ8.txt";
+            File.Create(path).Close();
+            string movedPath = "moved.txt";
+            File.Move(path, movedPath);
         }
         /// <summary>
         /// 9. read the first line of a file.
         /// </summary>
-        public static void q9()
+        public static void q9(string path)
         {
-
+            string firstLine = File.ReadLines(path).First();
+            Console.WriteLine(firstLine);
         }
         /// <summary>
         /// 10. to create and read the last line of a file.
         /// </summary>
         public static void q10()
         {
-
+            string[] lastLineArray = { "Last Line" };
+            File.WriteAllLines("lastline.txt", lastLineArray);
+            string lastLine = File.ReadLines("lastline.txt").Last();
+            Console.WriteLine("Last line of the file: " + lastLine);
         }
         /// <summary>
         /// 11. create and read the last n lines of a file.

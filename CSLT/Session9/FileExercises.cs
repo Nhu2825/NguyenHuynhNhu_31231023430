@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CSLT.Session9
 {
-    internal class testtt
+    internal class FileExercises
     {
         public static void Main()
         {
-            // 1. Create a blank file on the disk
             string blankFilePath = "blank.txt";
+            // 1. Create a blank file on the disk
             File.Create(blankFilePath).Close();
             Console.WriteLine("Blank file created.");
 
